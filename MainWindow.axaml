@@ -1,0 +1,139 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="PredatorPrey2.MainWindow"
+        Title="PredatorPrey2">
+	<Grid RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*"
+		  ColumnDefinitions="*,*"
+		  ShowGridLines="True">
+		<Border Name="mainBorder"
+				Background="WhiteSmoke"
+				Grid.RowSpan="11"
+				Grid.ColumnSpan="2"
+				IsVisible="False">
+			<StackPanel HorizontalAlignment="Center"
+						VerticalAlignment="Center">
+				<TextBlock Text="СИСТЕМА 'ХИЩНИК - ЖЕРТВА'"
+						   FontSize="20"
+						   FontWeight="Bold"/>
+				<Button HorizontalAlignment="Center"
+						Margin="15"
+						Background="Green"
+						Name="getStarted">
+					<TextBlock Text="Давай начнём!"
+							   Foreground="White"/>
+				</Button>
+			</StackPanel>
+		</Border>
+		
+		<TextBlock Text="'ХИЩНИК - ЖЕРТВА'"
+				   FontSize="20"
+				   FontWeight="Bold"
+				   Grid.ColumnSpan="2"
+				   Grid.Row="0"
+				   HorizontalAlignment="Center"
+				   VerticalAlignment="Center"/>
+
+		<DockPanel Grid.Column="0"
+				   Grid.Row="1">
+			<TextBlock Text="Биотический потенциал популяции жертв (ε): "
+					   VerticalAlignment="Center"
+					   Width="300"
+					   TextWrapping="Wrap"/>
+			<TextBox Name="eTB"/>
+		</DockPanel>
+
+		<DockPanel Grid.Column="0"
+				   Grid.Row="2">
+			<TextBlock Text="Коэффициент гибели за счёт встречи жертвы с хищником (α): "
+					   VerticalAlignment="Center"
+					   Width="300"
+					   TextWrapping="Wrap"/>
+			<TextBox Name="aTB"/>
+		</DockPanel>
+
+		<DockPanel Grid.Column="0"
+				   Grid.Row="3">
+			<TextBlock Text="Удельный коэффициент естественной смертности «жертвы» (σ): "
+					   VerticalAlignment="Center"
+					   Width="300"
+					   TextWrapping="Wrap"/>
+			<TextBox Name="bTB"/>
+		</DockPanel>
+
+		<DockPanel Grid.Column="0"
+				   Grid.Row="4">
+			<TextBlock Text="Коэффициент естественной гибели хищников (β): "
+					   VerticalAlignment="Center"
+					   Width="300"
+					   TextWrapping="Wrap"/>
+			<TextBox Name="BTB"/>
+		</DockPanel>
+
+		<DockPanel Grid.Column="0"
+				   Grid.Row="5">
+			<TextBlock Text="Исходная численность «жертв» (1-ый цикл): "
+					   VerticalAlignment="Center"
+					   Width="300"
+					   TextWrapping="Wrap"/>
+			<TextBox Name="x01TB"/>
+		</DockPanel>
+
+		<DockPanel Grid.Column="0"
+				   Grid.Row="6">
+			<TextBlock Text="Исходная численность «хищников» (1-ый цикл): "
+					   VerticalAlignment="Center"
+					   Width="300"
+					   TextWrapping="Wrap"/>
+			<TextBox Name="y01TB"/>
+		</DockPanel>
+
+		<DockPanel Grid.Column="0"
+				   Grid.Row="7">
+			<TextBlock Text="Исходная численность «жертв» (2-ой цикл): "
+					   VerticalAlignment="Center"
+					   Width="300"
+					   TextWrapping="Wrap"/>
+			<TextBox Name="x02TB"/>
+		</DockPanel>
+
+		<DockPanel Grid.Column="0"
+				   Grid.Row="8">
+			<TextBlock Text="Исходная численность «хищников» (2-ой цикл): "
+					   VerticalAlignment="Center"
+					   Width="300"
+					   TextWrapping="Wrap"/>
+			<TextBox Name="y02TB"/>
+		</DockPanel>
+
+		<DockPanel Grid.Column="0"
+				   Grid.Row="9">
+			<TextBlock Text="Исходная численность «жертв» (3-ий цикл): "
+					   VerticalAlignment="Center"
+					   Width="300"
+					   TextWrapping="Wrap"/>
+			<TextBox Name="x03TB"/>
+		</DockPanel>
+
+		<DockPanel Grid.Column="0"
+				   Grid.Row="10">
+			<TextBlock Text="Исходная численность «хищников» (3-ий цикл): "
+					   VerticalAlignment="Center"
+					   Width="300"
+					   TextWrapping="Wrap"/>
+			<TextBox Name="y03TB"/>
+		</DockPanel>
+
+		<Button Name="back"
+				Background="Red"
+				Grid.ColumnSpan="2"
+				Grid.Row="11"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center">
+			<TextBlock Text="Завершить работу"
+					   Foreground="White"/>
+		</Button>
+	</Grid>
+</Window>
