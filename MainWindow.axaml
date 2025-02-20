@@ -2,36 +2,32 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="using:AvaloniaSample"
+		xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="PredatorPrey2.MainWindow"
-        Title="PredatorPrey2">
-	<Grid RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,*"
-		  ColumnDefinitions="*,*"
-		  ShowGridLines="True">
-		<Border Name="mainBorder"
-				Background="WhiteSmoke"
-				Grid.RowSpan="11"
-				Grid.ColumnSpan="2"
-				IsVisible="False">
-			<StackPanel HorizontalAlignment="Center"
-						VerticalAlignment="Center">
-				<TextBlock Text="СИСТЕМА 'ХИЩНИК - ЖЕРТВА'"
-						   FontSize="20"
-						   FontWeight="Bold"/>
-				<Button HorizontalAlignment="Center"
-						Margin="15"
-						Background="Green"
-						Name="getStarted">
-					<TextBlock Text="Давай начнём!"
-							   Foreground="White"/>
-				</Button>
-			</StackPanel>
-		</Border>
+		x:CompileBindings="False"
+        Title="Хищник-жертва">
+	<Grid RowDefinitions="*,*,*,*,*,*,*,*,*,*,*,Auto,*"
+		  ColumnDefinitions="*,*,*"
+		  ShowGridLines="False"
+		  Name="gridData">
+		
+		<lvc:CartesianChart Name="phase_portrait"
+							Series="{Binding Phase}"
+							Grid.Column="1"
+							Grid.Row="5"
+							Height="520"/>
+		<lvc:CartesianChart Name="graph"
+							Series="{Binding Graph}"
+							Grid.Column="2"
+							Grid.Row="5"
+							Height="520"/>
 		
 		<TextBlock Text="'ХИЩНИК - ЖЕРТВА'"
 				   FontSize="20"
 				   FontWeight="Bold"
-				   Grid.ColumnSpan="2"
+				   Grid.ColumnSpan="3"
 				   Grid.Row="0"
 				   HorizontalAlignment="Center"
 				   VerticalAlignment="Center"/>
@@ -42,7 +38,8 @@
 					   VerticalAlignment="Center"
 					   Width="300"
 					   TextWrapping="Wrap"/>
-			<TextBox Name="eTB"/>
+			<TextBox Name="eTB"
+					 Text="{Binding Alpha}"/>
 		</DockPanel>
 
 		<DockPanel Grid.Column="0"
@@ -51,7 +48,8 @@
 					   VerticalAlignment="Center"
 					   Width="300"
 					   TextWrapping="Wrap"/>
-			<TextBox Name="aTB"/>
+			<TextBox Name="aTB"
+					 Text="{Binding Epsilon}"/>
 		</DockPanel>
 
 		<DockPanel Grid.Column="0"
@@ -60,7 +58,8 @@
 					   VerticalAlignment="Center"
 					   Width="300"
 					   TextWrapping="Wrap"/>
-			<TextBox Name="bTB"/>
+			<TextBox Name="bTB"
+					 Text="{Binding Omega}"/>
 		</DockPanel>
 
 		<DockPanel Grid.Column="0"
@@ -69,7 +68,8 @@
 					   VerticalAlignment="Center"
 					   Width="300"
 					   TextWrapping="Wrap"/>
-			<TextBox Name="BTB"/>
+			<TextBox Name="BTB"
+					 Text="{Binding Beta}"/>
 		</DockPanel>
 
 		<DockPanel Grid.Column="0"
@@ -78,7 +78,8 @@
 					   VerticalAlignment="Center"
 					   Width="300"
 					   TextWrapping="Wrap"/>
-			<TextBox Name="x01TB"/>
+			<TextBox Name="x01TB"
+					 Text="{Binding PreyQuantity1}"/>
 		</DockPanel>
 
 		<DockPanel Grid.Column="0"
@@ -87,7 +88,8 @@
 					   VerticalAlignment="Center"
 					   Width="300"
 					   TextWrapping="Wrap"/>
-			<TextBox Name="y01TB"/>
+			<TextBox Name="y01TB"
+					 Text="{Binding PredatorQuantity1}"/>
 		</DockPanel>
 
 		<DockPanel Grid.Column="0"
@@ -96,7 +98,8 @@
 					   VerticalAlignment="Center"
 					   Width="300"
 					   TextWrapping="Wrap"/>
-			<TextBox Name="x02TB"/>
+			<TextBox Name="x02TB"
+					 Text="{Binding PreyQuantity2}"/>
 		</DockPanel>
 
 		<DockPanel Grid.Column="0"
@@ -105,7 +108,8 @@
 					   VerticalAlignment="Center"
 					   Width="300"
 					   TextWrapping="Wrap"/>
-			<TextBox Name="y02TB"/>
+			<TextBox Name="y02TB"
+					 Text="{Binding PredatorQuantity2}"/>
 		</DockPanel>
 
 		<DockPanel Grid.Column="0"
@@ -114,7 +118,8 @@
 					   VerticalAlignment="Center"
 					   Width="300"
 					   TextWrapping="Wrap"/>
-			<TextBox Name="x03TB"/>
+			<TextBox Name="x03TB"
+					 Text="{Binding PreyQuantity3}"/>
 		</DockPanel>
 
 		<DockPanel Grid.Column="0"
@@ -123,17 +128,46 @@
 					   VerticalAlignment="Center"
 					   Width="300"
 					   TextWrapping="Wrap"/>
-			<TextBox Name="y03TB"/>
+			<TextBox Name="y03TB"
+					 Text="{Binding PredatorQuantity3}"/>
 		</DockPanel>
 
 		<Button Name="back"
-				Background="Red"
-				Grid.ColumnSpan="2"
-				Grid.Row="11"
+				Background="RoyalBlue"
+				Grid.ColumnSpan="3"
+				Grid.Row="12"
 				HorizontalAlignment="Center"
 				VerticalAlignment="Center">
 			<TextBlock Text="Завершить работу"
 					   Foreground="White"/>
 		</Button>
+		
+		<TextBlock Name="warning"
+				   Text="Ваши действия недопустимы!"
+				   Foreground="Red"
+				   Grid.ColumnSpan="3"
+				   Grid.Row="11"
+				   HorizontalAlignment="Center"
+				   IsVisible="False"/>
+		
+		<Border Name="mainBorder"
+				Background="WhiteSmoke"
+				Grid.RowSpan="13"
+				Grid.ColumnSpan="3"
+				IsVisible="False">
+			<StackPanel HorizontalAlignment="Center"
+						VerticalAlignment="Center">
+				<TextBlock Text="СИСТЕМА 'ХИЩНИК - ЖЕРТВА'"
+						   FontSize="20"
+						   FontWeight="Bold"/>
+				<Button HorizontalAlignment="Center"
+						Margin="15"
+						Background="RoyalBlue"
+						Name="getStarted">
+					<TextBlock Text="Давай начнём!"
+							   Foreground="White"/>
+				</Button>
+			</StackPanel>
+		</Border>
 	</Grid>
 </Window>
