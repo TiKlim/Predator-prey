@@ -15,10 +15,10 @@ namespace PredatorPrey2
     internal class ChartData
     {
         // Статические переменные, которые представляют параметры модели
-        private static double alphaValue;
-        private static double betaValue;
         private static double epsilonValue;
+        private static double alphaValue;
         private static double omegaValue;
+        private static double betaValue;
         private static double preyCountValue1;
         private static double predatorCountValue1;
         private static double preyCountValue2;
@@ -32,10 +32,10 @@ namespace PredatorPrey2
 
 
         // Свойства, через которые другим частям программы можно получить доступ к значениям параметров модели
-        public double Alpha => alphaValue;
-        public double Beta => betaValue;
         public double Epsilon => epsilonValue;
+        public double Alpha => alphaValue;
         public double Omega => omegaValue;
+        public double Beta => betaValue;
         public double PreyQuantity1 => preyCountValue1;
         public double PredatorQuantity1 => predatorCountValue1;
         public double PreyQuantity2 => preyCountValue2;
@@ -44,12 +44,12 @@ namespace PredatorPrey2
         public double PredatorQuantity3 => predatorCountValue3;
 
         // Конструктор и инициализация статичесикх переменных в нём
-        public ChartData(double alpha, double beta, double epsilon, double omega, double preyCount1, double predatorCount1, double preyCount2, double predatorCount2, double preyCount3, double predatorCount3)
+        public ChartData(double epsilon, double alpha, double omega, double beta, double preyCount1, double predatorCount1, double preyCount2, double predatorCount2, double preyCount3, double predatorCount3)
         {
-            alphaValue = alpha;
-            betaValue = beta;
             epsilonValue = epsilon;
+            alphaValue = alpha;
             omegaValue = omega;
+            betaValue = beta;
             preyCountValue1 = preyCount1;
             predatorCountValue1 = predatorCount1;
             preyCountValue2 = preyCount2;
@@ -98,7 +98,7 @@ namespace PredatorPrey2
             });
 
             // Рассчёт новых значений
-            for (int i = 0; i < 150; i++)
+            for (int i = 0; i < 130; i++)
             {
                 double preyCountFirst = Math.Round((double)((epsilonValue - alphaValue * chartGeneration[i].Y) * chartGeneration[i].X + chartGeneration[i].X), 2);
                 chartGeneration.Add(new ObservablePoint()

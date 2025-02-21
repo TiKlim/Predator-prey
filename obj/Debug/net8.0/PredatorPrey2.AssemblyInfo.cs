@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PredatorPrey2")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9018d686f2784494e9af3bb86f5f53e84bc7d4a4")]
 [assembly: System.Reflection.AssemblyProductAttribute("PredatorPrey2")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PredatorPrey2")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

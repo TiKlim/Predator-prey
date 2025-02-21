@@ -5,6 +5,7 @@
 		xmlns:local="using:AvaloniaSample"
 		xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		WindowStartupLocation="CenterScreen"
         x:Class="PredatorPrey2.MainWindow"
 		x:CompileBindings="False"
         Title="Хищник-жертва">
@@ -39,7 +40,7 @@
 					   Width="300"
 					   TextWrapping="Wrap"/>
 			<TextBox Name="eTB"
-					 Text="{Binding Alpha}"/>
+					 Text="{Binding Epsilon}"/>
 		</DockPanel>
 
 		<DockPanel Grid.Column="0"
@@ -49,7 +50,7 @@
 					   Width="300"
 					   TextWrapping="Wrap"/>
 			<TextBox Name="aTB"
-					 Text="{Binding Epsilon}"/>
+					 Text="{Binding Alpha}"/>
 		</DockPanel>
 
 		<DockPanel Grid.Column="0"
@@ -141,6 +142,16 @@
 			<TextBlock Text="Завершить работу"
 					   Foreground="White"/>
 		</Button>
+		<Button Name="go"
+				Background="RoyalBlue"
+				Grid.ColumnSpan="3"
+				Grid.Row="11"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center"
+				IsVisible="false">
+			<TextBlock Text="Построить график"
+					   Foreground="White"/>
+		</Button>
 		
 		<TextBlock Name="warning"
 				   Text="Ваши действия недопустимы!"
@@ -154,7 +165,7 @@
 				Background="WhiteSmoke"
 				Grid.RowSpan="13"
 				Grid.ColumnSpan="3"
-				IsVisible="False">
+				IsVisible="True">
 			<StackPanel HorizontalAlignment="Center"
 						VerticalAlignment="Center">
 				<TextBlock Text="СИСТЕМА 'ХИЩНИК - ЖЕРТВА'"

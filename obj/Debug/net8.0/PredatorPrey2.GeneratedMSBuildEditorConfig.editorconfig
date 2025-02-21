@@ -15,12 +15,12 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = PredatorPrey2
-build_property.ProjectDir = C:\Users\Клим\source\repos\PredatorPrey2\
+build_property.ProjectDir = C:\Users\prdb\Desktop\PredatorPrey\Predator-prey\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/Клим/source/repos/PredatorPrey2/App.axaml]
+[C:/Users/prdb/Desktop/PredatorPrey/Predator-prey/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Клим/source/repos/PredatorPrey2/MainWindow.axaml]
+[C:/Users/prdb/Desktop/PredatorPrey/Predator-prey/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

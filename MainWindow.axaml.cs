@@ -14,7 +14,7 @@ namespace PredatorPrey2
     public partial class MainWindow : Window
     {
         // Тестовые значения
-        private static ChartData chartChart = new ChartData(0.65, 0.011, 0.007, 0.2, 100, 90, 100, 60, 100, 30);
+        //private static ChartData chartChart = new ChartData(0.65, 0.011, 0.007, 0.2, 100, 90, 100, 60, 100, 30);
 
         // Конструктор
         public MainWindow()
@@ -22,7 +22,7 @@ namespace PredatorPrey2
             InitializeComponent();
             getStarted.Click += GetStarted_Click;
             back.Click += Back_Click;
-            gridData.DataContext = chartChart;
+            //gridData.DataContext = chartChart;
             eTB.KeyUp += ETB_KeyUp;
             aTB.KeyUp += ATB_KeyUp;
             BTB.KeyUp += BTB_KeyUp;
@@ -34,6 +34,7 @@ namespace PredatorPrey2
             x03TB.KeyUp += X03TB_KeyUp;
             y03TB.KeyUp += Y03TB_KeyUp;
         }
+ 
 
         // Определение 
         private void Y03TB_KeyUp(object? sender, Avalonia.Input.KeyEventArgs e) => SetData();
@@ -61,10 +62,10 @@ namespace PredatorPrey2
         {
             try
             {
-                ChartData chartData = new ChartData(Convert.ToDouble(aTB.Text), 
-                    Convert.ToDouble(BTB.Text), 
-                    Convert.ToDouble(eTB.Text), 
-                    Convert.ToDouble(bTB.Text),
+                ChartData chartData = new ChartData(Convert.ToDouble(eTB.Text), 
+                    Convert.ToDouble(aTB.Text), 
+                    Convert.ToDouble(bTB.Text), 
+                    Convert.ToDouble(BTB.Text),
                     Convert.ToDouble(x01TB.Text), 
                     Convert.ToDouble(y01TB.Text),
                     Convert.ToDouble(x02TB.Text), 
@@ -72,7 +73,6 @@ namespace PredatorPrey2
                     Convert.ToDouble(x03TB.Text), 
                     Convert.ToDouble(y03TB.Text));
                 gridData.DataContext = chartData;
-
             }
             catch 
             {
